@@ -1,0 +1,7 @@
+:host {
+  display: block;
+
+  @media (max-width: 770px) {
+    overflow-x: scroll;
+  }
+}
