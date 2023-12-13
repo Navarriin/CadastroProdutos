@@ -3,16 +3,18 @@
     <hr class="col-12">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Cadastro de produtos</mat-card-title>
+        <div class="d-flex col-11 m-auto justify-content-between mt-3">
+          <mat-card-title>Cadastro de produtos</mat-card-title>
+          <div class="d-flex gap-2">
+            <button *ngIf="!search" mat-raised-button color="primary">Pesquisar</button>
+            <button (click)="toggleSearch()" mat-raised-button color="primary">
+              {{!search ? 'Incluir' : 'Voltar'}}
+            </button>
+          </div>
+        </div>
       </mat-card-header>
       <mat-card-content>
-        <div class="d-flex gap-2 justify-content-end me-5 mt-3">
-          <button *ngIf="!search" mat-raised-button color="primary">Pesquisar</button>
-          <button (click)="toggleSearch()" mat-raised-button color="primary">
-            {{!search ? 'Incluir' : 'Voltar'}}
-          </button>
-        </div>
-        <div class="col-10 m-auto">
+        <div class="col-11 m-auto">
           <hr />
         </div>
         <app-table *ngIf="!search" />

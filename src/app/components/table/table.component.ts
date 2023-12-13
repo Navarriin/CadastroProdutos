@@ -4,40 +4,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-
-export interface Products {
-  id?: string;
-  sku: string;
-  produto: string;
-  estoque: number;
-  custo: number;
-  preco: number;
-}
+// Import da interface
+import { Products } from '../../interface/Products.interface';
 
 const PRODUCT_DATA: Products[] = [
   {
     id: '12315d4sadasdad',
     sku: '1.0079',
-    produto: 'H',
-    estoque: 12,
-    custo: 124,
-    preco: 26,
-  },
-  {
-    id: '12efsav6dfdnjsa',
-    sku: '1.0079',
-    produto: 'H',
-    estoque: 12,
-    custo: 124,
-    preco: 26,
-  },
-  {
-    id: 'ndanybusafas9er43',
-    sku: '1.0079',
-    produto: 'H',
-    estoque: 12,
-    custo: 124,
-    preco: 26,
+    product: 'H',
+    stock: 12,
+    cost: 124,
+    price: 26,
   },
 ];
 
@@ -50,12 +27,12 @@ const PRODUCT_DATA: Products[] = [
 })
 export class TableComponent {
   displayedColumns: string[] = [
-    'acao',
+    'action',
     'sku',
-    'produto',
-    'estoque',
-    'custo',
-    'preco',
+    'product',
+    'stock',
+    'cost',
+    'price',
   ];
   dataSource = PRODUCT_DATA;
 }

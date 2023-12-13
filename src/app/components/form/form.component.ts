@@ -18,22 +18,30 @@ import {
   imports: [
     MatButtonModule,
     MatStepperModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+  firstFormGroup = this.formBuilder.group({
+    sku: [null, Validators.required],
+    product: [null, Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+  secondFormGroup = this.formBuilder.group({
+    stock: [null],
+    cost: [null, Validators.required],
+    price: [null, Validators.required],
   });
-  isLinear = false;
+  isLinear: boolean = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
+
+  saveProduct(): void {}
+
+  updateProduct(): void {}
 }

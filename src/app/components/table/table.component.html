@@ -3,7 +3,7 @@
     <div class="col-11 m-auto p-4">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <ng-container matColumnDef="acao">
+        <ng-container matColumnDef="action">
           <th class="text-center" mat-header-cell *matHeaderCellDef> Ação </th>
           <td class="col-1" mat-cell *matCellDef="let element">
             <div class="d-flex justify-content-between col-sm-6 gap-2">
@@ -18,24 +18,24 @@
           <td class="text-center" mat-cell *matCellDef="let element"> {{element.sku}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="produto">
+        <ng-container matColumnDef="product">
           <th class="text-center" mat-header-cell *matHeaderCellDef> Produto </th>
-          <td class="text-center" mat-cell *matCellDef="let element"> {{element.produto}} </td>
+          <td class="text-center" mat-cell *matCellDef="let element"> {{element.product}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="estoque">
+        <ng-container matColumnDef="stock">
           <th class="text-center" mat-header-cell *matHeaderCellDef> Estoque </th>
-          <td class="text-center" mat-cell *matCellDef="let element"> {{element.estoque}} </td>
+          <td class="text-center" mat-cell *matCellDef="let element"> {{element.stock}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="custo">
+        <ng-container matColumnDef="cost">
           <th class="text-center" mat-header-cell *matHeaderCellDef> Custo </th>
-          <td class="text-center" mat-cell *matCellDef="let element"> {{element.custo}} </td>
+          <td class="text-center" mat-cell *matCellDef="let element"> {{element.cost}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="preco">
+        <ng-container matColumnDef="price">
           <th class="text-center" mat-header-cell *matHeaderCellDef> Preço </th>
-          <td class="text-center" mat-cell *matCellDef="let element"> {{element.preco}} </td>
+          <td class="text-center" mat-cell *matCellDef="let element"> {{element.price}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
