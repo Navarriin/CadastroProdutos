@@ -1,5 +1,12 @@
 :host {
   display: block;
+
+  @media (max-width: 480px) {
+    .inputs {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
 }
 .mat-stepper-vertical {
   margin-top: 8px;

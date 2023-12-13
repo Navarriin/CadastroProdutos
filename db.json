@@ -9,20 +9,20 @@
       "price": 12.7
     },
     {
-      "id": "qVXa8__",
-      "sku": "2134",
-      "product": "dadad",
-      "stock": 2,
-      "cost": 34,
-      "price": 11
-    },
-    {
       "id": "7UJNYcr",
       "sku": "2564",
       "product": "Iphone",
       "stock": 5,
       "cost": 8000,
       "price": 12000
+    },
+    {
+      "id": "N66IKvt",
+      "sku": "153",
+      "product": "caixinha de som",
+      "stock": 33,
+      "cost": 21,
+      "price": 33
     }
   ]
 }
