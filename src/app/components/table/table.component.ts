@@ -37,6 +37,10 @@ export class TableComponent {
     this.productsApi.get().subscribe((data) => (this.data = data));
   }
 
+  postProduct(body: Products): void {
+    this.productsApi.post(body).subscribe(() => this.getProducts());
+  }
+
   updateProduct(body: Products): void {}
 
   deleteProduct(id: string): void {

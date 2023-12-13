@@ -9,12 +9,20 @@
       "price": 12.7
     },
     {
-      "id": "dadas34fad",
-      "sku": "164wg93n",
-      "product": "Água Mineral",
+      "id": "qVXa8__",
+      "sku": "2134",
+      "product": "dadad",
+      "stock": 2,
+      "cost": 34,
+      "price": 11
+    },
+    {
+      "id": "7UJNYcr",
+      "sku": "2564",
+      "product": "Iphone",
       "stock": 5,
-      "cost": 5.04,
-      "price": 12.7
+      "cost": 8000,
+      "price": 12000
     }
   ]
 }

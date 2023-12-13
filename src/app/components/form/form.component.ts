@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 // Angular materials
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -6,11 +6,15 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 // Imports para forms
 import {
-  FormBuilder,
   Validators,
   FormsModule,
   ReactiveFormsModule,
+  FormGroup,
+  FormControl,
 } from '@angular/forms';
+import { ProductsApiService } from '../../services/products-api.service';
+import { Products } from '../../interface/Products.interface';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-form',
@@ -27,19 +31,32 @@ import {
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
-export class FormComponent {
-  firstFormGroup = this.formBuilder.group({
-    sku: [null, Validators.required],
-    product: [null, Validators.required],
-  });
-  secondFormGroup = this.formBuilder.group({
-    stock: [null],
-    cost: [null, Validators.required],
-    price: [null, Validators.required],
-  });
+export class FormComponent extends TableComponent {
+  @Output() toggle = new EventEmitter();
   isLinear: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  formGroup: FormGroup = new FormGroup({
+    id: new FormControl(null),
+    sku: new FormControl(null, Validators.required),
+    product: new FormControl(null, Validators.required),
+    stock: new FormControl(null),
+    cost: new FormControl(null, Validators.required),
+    price: new FormControl(null, Validators.required),
+  });
 
-  saveProduct(): void {}
+  constructor(productsApi: ProductsApiService) {
+    super(productsApi);
+  }
+
+  saveProduct(): void {
+    if (this.formGroup.valid) {
+      let products = this.formGroup.value as Products;
+
+      this.postProduct(products);
+      this.toggle.emit();
+    } else {
+      this.formGroup.markAllAsTouched();
+      this.formGroup.updateValueAndValidity();
+    }
+  }
 }

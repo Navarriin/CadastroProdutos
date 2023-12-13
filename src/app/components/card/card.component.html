@@ -18,7 +18,7 @@
           <hr />
         </div>
         <app-table *ngIf="!search" />
-        <app-form *ngIf="search" />
+        <app-form *ngIf="search" (toggle)="toggleSearch()" />
       </mat-card-content>
     </mat-card>
   </div>
