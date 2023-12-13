@@ -7,14 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 // Imports para forms
 import {
   Validators,
-  FormsModule,
   ReactiveFormsModule,
   FormGroup,
   FormControl,
 } from '@angular/forms';
+// Meus imports(API, TableComponent e interface)
 import { ProductsApiService } from '../../services/products-api.service';
-import { Products } from '../../interface/Products.interface';
 import { TableComponent } from '../table/table.component';
+import { Products } from '../../interface/Products.interface';
 
 @Component({
   selector: 'app-form',
@@ -24,15 +24,13 @@ import { TableComponent } from '../table/table.component';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-
-    FormsModule,
     ReactiveFormsModule,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
 export class FormComponent extends TableComponent {
-  @Output() toggle = new EventEmitter();
+  @Output() toggle: EventEmitter<void> = new EventEmitter();
   isLinear: boolean = false;
 
   formGroup: FormGroup = new FormGroup({
