@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 // Meus components
 import { TableComponent } from '../table/table.component';
+import { FormComponent } from '../form/form.component';
 // Angular Material components
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { FormComponent } from '../form/form.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',

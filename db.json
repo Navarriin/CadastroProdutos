@@ -1,0 +1,20 @@
+{
+  "Products": [
+    {
+      "id": "UUIddpad",
+      "sku": "164wg93n",
+      "product": "Água Mineral",
+      "stock": 5,
+      "cost": 5.04,
+      "price": 12.7
+    },
+    {
+      "id": "dadas34fad",
+      "sku": "164wg93n",
+      "product": "Água Mineral",
+      "stock": 5,
+      "cost": 5.04,
+      "price": 12.7
+    }
+  ]
+}

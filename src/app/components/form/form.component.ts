@@ -42,6 +42,4 @@ export class FormComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   saveProduct(): void {}
-
-  updateProduct(): void {}
 }

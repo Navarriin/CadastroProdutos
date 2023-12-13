@@ -6,17 +6,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 // Import da interface
 import { Products } from '../../interface/Products.interface';
-
-const PRODUCT_DATA: Products[] = [
-  {
-    id: '12315d4sadasdad',
-    sku: '1.0079',
-    product: 'H',
-    stock: 12,
-    cost: 124,
-    price: 26,
-  },
-];
+// Meu service
+import { ProductsApiService } from '../../services/products-api.service';
 
 @Component({
   selector: 'app-table',
@@ -26,6 +17,7 @@ const PRODUCT_DATA: Products[] = [
   styleUrl: './table.component.scss',
 })
 export class TableComponent {
+  protected data!: Products[];
   displayedColumns: string[] = [
     'action',
     'sku',
@@ -34,5 +26,20 @@ export class TableComponent {
     'cost',
     'price',
   ];
-  dataSource = PRODUCT_DATA;
+
+  constructor(private productsApi: ProductsApiService) {}
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productsApi.get().subscribe((data) => (this.data = data));
+  }
+
+  updateProduct(body: Products): void {}
+
+  deleteProduct(id: string): void {
+    this.productsApi.delete(id).subscribe(() => this.getProducts());
+  }
 }
