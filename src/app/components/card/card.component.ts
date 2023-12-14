@@ -6,6 +6,7 @@ import { FormComponent } from '../form/form.component';
 // Angular Material components
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { Products } from '../../interface/Products.interface';
 
 @Component({
   selector: 'app-card',
@@ -20,10 +21,14 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent {
+export class CardComponent extends FormComponent {
   search: boolean = false;
 
   toggleSearch(): void {
     this.search = !this.search;
+  }
+
+  teste(body: Products) {
+    this.editProduct(body);
   }
 }

@@ -19,7 +19,6 @@ import { FormComponent } from '../form/form.component';
 })
 export class TableComponent {
   @Output() toggleTab = new EventEmitter();
-  protected update!: Products;
   protected data!: Products[];
   displayedColumns: string[] = [
     'action',
@@ -45,8 +44,7 @@ export class TableComponent {
   }
 
   updateProduct(body: Products): void {
-    this.update = body;
-    this.toggleTab.emit();
+    this.toggleTab.emit(body);
   }
 
   deleteProduct(id: string): void {

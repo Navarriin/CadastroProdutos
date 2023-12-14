@@ -34,9 +34,9 @@ export class FormComponent extends TableComponent {
   isLinear: boolean = false;
 
   formGroup: FormGroup = new FormGroup({
-    id: new FormControl(null),
-    sku: new FormControl(null, Validators.required),
-    product: new FormControl(null, Validators.required),
+    id: new FormControl(''),
+    sku: new FormControl('', Validators.required),
+    product: new FormControl('', Validators.required),
     stock: new FormControl(null),
     cost: new FormControl(null, Validators.required),
     price: new FormControl(null, Validators.required),
@@ -58,10 +58,5 @@ export class FormComponent extends TableComponent {
     }
   }
 
-  editProduct(): void {
-    if (this.update) {
-      console.log('oi');
-      this.formGroup.patchValue(this.update);
-    }
-  }
+  editProduct(body: Products): void {}
 }
