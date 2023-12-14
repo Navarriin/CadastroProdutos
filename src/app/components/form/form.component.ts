@@ -57,4 +57,11 @@ export class FormComponent extends TableComponent {
       this.formGroup.updateValueAndValidity();
     }
   }
+
+  editProduct(): void {
+    if (this.update) {
+      console.log('oi');
+      this.formGroup.patchValue(this.update);
+    }
+  }
 }
