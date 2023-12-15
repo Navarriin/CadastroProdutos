@@ -58,5 +58,8 @@ export class FormComponent extends TableComponent {
     }
   }
 
-  editProduct(body: Products): void {}
+  editProduct(body: Products): void {
+    this.formGroup.patchValue(body);
+    this.formGroup.updateValueAndValidity();
+  }
 }
