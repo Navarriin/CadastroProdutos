@@ -1,20 +1,20 @@
 {
   "Products": [
     {
-      "id": "UUIddpad",
-      "sku": "164wg93n",
-      "product": "Água Mineral",
-      "stock": 5,
-      "cost": 5.04,
-      "price": 12.7
-    },
-    {
       "id": "7UJNYcr",
       "sku": "2564",
       "product": "Iphone",
       "stock": 5,
       "cost": 8000,
       "price": 12000
+    },
+    {
+      "id": "Uri6P7q",
+      "sku": "1642",
+      "product": "Playstation 5",
+      "stock": 5,
+      "cost": 1200,
+      "price": 3500
     }
   ]
 }

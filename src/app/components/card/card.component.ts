@@ -27,8 +27,4 @@ export class CardComponent extends FormComponent {
   toggleSearch(): void {
     this.search = !this.search;
   }
-
-  teste(body: Products) {
-    this.editProduct(body);
-  }
 }

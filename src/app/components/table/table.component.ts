@@ -8,17 +8,27 @@ import { MatButtonModule } from '@angular/material/button';
 import { Products } from '../../interface/Products.interface';
 // Meu service
 import { ProductsApiService } from '../../services/products-api.service';
-import { FormComponent } from '../form/form.component';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [
+    MatTableModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
 export class TableComponent {
-  @Output() toggleTab = new EventEmitter();
   protected data!: Products[];
   displayedColumns: string[] = [
     'action',
@@ -28,6 +38,15 @@ export class TableComponent {
     'cost',
     'price',
   ];
+
+  formGroupUpdate: FormGroup = new FormGroup({
+    id: new FormControl(''),
+    sku: new FormControl('', Validators.required),
+    product: new FormControl('', Validators.required),
+    stock: new FormControl(null),
+    cost: new FormControl(null, Validators.required),
+    price: new FormControl(null, Validators.required),
+  });
 
   constructor(private productsApi: ProductsApiService) {}
 
@@ -44,7 +63,7 @@ export class TableComponent {
   }
 
   updateProduct(body: Products): void {
-    this.toggleTab.emit(body);
+    this.formGroupUpdate.patchValue(body);
   }
 
   deleteProduct(id: string): void {

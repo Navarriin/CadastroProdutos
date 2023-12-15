@@ -44,6 +44,31 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
       </table>
+
+      <form class="mt-5" [formGroup]="formGroupUpdate">
+        <div class="mb-3">
+          <label for="sku" class="form-label">Sku</label>
+          <input type="text" class="form-control" id="sku" formControlName="sku">
+        </div>
+        <div class="mb-3">
+          <label for="product" class="form-label">produto</label>
+          <input type="text" class="form-control" id="product" formControlName="product">
+        </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Estoque</label>
+          <input type="text" class="form-control" id="stock" formControlName="stock">
+        </div>
+        <div class="mb-3">
+          <label for="cost" class="form-label">Custo</label>
+          <input type="text" class="form-control" id="cost" formControlName="cost">
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Preço</label>
+          <input type="text" class="form-control" id="price" formControlName="price">
+        </div>
+        <button type="button" class="btn btn-primary">Salvar</button>
+      </form>
+
     </div>
   </div>
 </div>

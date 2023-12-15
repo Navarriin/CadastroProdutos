@@ -42,10 +42,6 @@ export class FormComponent extends TableComponent {
     price: new FormControl(null, Validators.required),
   });
 
-  constructor(productsApi: ProductsApiService) {
-    super(productsApi);
-  }
-
   saveProduct(): void {
     if (this.formGroup.valid) {
       let products = this.formGroup.value as Products;
@@ -56,10 +52,5 @@ export class FormComponent extends TableComponent {
       this.formGroup.markAllAsTouched();
       this.formGroup.updateValueAndValidity();
     }
-  }
-
-  editProduct(body: Products): void {
-    this.formGroup.patchValue(body);
-    this.formGroup.updateValueAndValidity();
   }
 }
