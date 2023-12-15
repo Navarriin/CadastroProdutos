@@ -9,7 +9,7 @@
             <div class="d-flex justify-content-between col-sm-6 gap-2">
               <button type="button" class="btn btn-danger" (click)="deleteProduct(element.id)"><i
                   class="bi bi-trash3"></i></button>
-              <button type="button" class="btn btn-primary" (click)="updateProduct(element)"><i
+              <button type="button" class="btn btn-primary" (click)="fillingOutTheForm(element)"><i
                   class="bi bi-pencil"></i></button>
             </div>
           </td>
@@ -45,30 +45,31 @@
 
       </table>
 
-      <form class="mt-5" [formGroup]="formGroupUpdate">
-        <div class="mb-3">
-          <label for="sku" class="form-label">Sku</label>
-          <input type="text" class="form-control" id="sku" formControlName="sku">
-        </div>
-        <div class="mb-3">
-          <label for="product" class="form-label">produto</label>
-          <input type="text" class="form-control" id="product" formControlName="product">
-        </div>
-        <div class="mb-3">
-          <label for="stock" class="form-label">Estoque</label>
-          <input type="text" class="form-control" id="stock" formControlName="stock">
-        </div>
-        <div class="mb-3">
-          <label for="cost" class="form-label">Custo</label>
-          <input type="text" class="form-control" id="cost" formControlName="cost">
-        </div>
-        <div class="mb-3">
-          <label for="price" class="form-label">Preço</label>
-          <input type="text" class="form-control" id="price" formControlName="price">
-        </div>
-        <button type="button" class="btn btn-primary">Salvar</button>
-      </form>
-
+      <div *ngIf="show">
+        <form class=" mt-5 d-flex flex-wrap gap-2" [formGroup]="formGroupUpdate">
+          <div class="mb-3 col-2">
+            <label for="sku" class="form-label">Sku</label>
+            <input type="text" class="form-control" id="sku" formControlName="sku">
+          </div>
+          <div class="mb-3 col-9">
+            <label for="product" class="form-label">produto</label>
+            <input type="text" class="form-control" id="product" formControlName="product">
+          </div>
+          <div class="mb-3 col-4">
+            <label for="stock" class="form-label">Estoque</label>
+            <input type="text" class="form-control" id="stock" formControlName="stock">
+          </div>
+          <div class="mb-3 col-4">
+            <label for="cost" class="form-label">Custo</label>
+            <input type="text" class="form-control" id="cost" formControlName="cost">
+          </div>
+          <div class="mb-3 col-3">
+            <label for="price" class="form-label">Preço</label>
+            <input type="text" class="form-control" id="price" formControlName="price">
+          </div>
+        </form>
+        <button type="button" class="btn btn-primary" (click)="putProduct(formGroupUpdate.value)">Salvar</button>
+      </div>
     </div>
   </div>
 </div>

@@ -14,11 +14,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-table',
   standalone: true,
   imports: [
+    CommonModule,
     MatTableModule,
     MatButtonModule,
     MatDividerModule,
@@ -38,6 +40,8 @@ export class TableComponent {
     'cost',
     'price',
   ];
+
+  show: boolean = false;
 
   formGroupUpdate: FormGroup = new FormGroup({
     id: new FormControl(''),
@@ -62,11 +66,19 @@ export class TableComponent {
     this.productsApi.post(body).subscribe(() => this.getProducts());
   }
 
-  updateProduct(body: Products): void {
-    this.formGroupUpdate.patchValue(body);
+  putProduct(body: Products): void {
+    this.productsApi.update(body).subscribe(() => this.getProducts());
+    this.show = false;
   }
 
   deleteProduct(id: string): void {
     this.productsApi.delete(id).subscribe(() => this.getProducts());
+    this.show = false;
+    this.formGroupUpdate.reset();
+  }
+
+  fillingOutTheForm(body: Products): void {
+    this.formGroupUpdate.patchValue(body);
+    this.show = true;
   }
 }
