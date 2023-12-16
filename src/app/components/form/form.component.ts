@@ -37,11 +37,14 @@ export class FormComponent extends TableComponent {
 
   formGroup: FormGroup = new FormGroup({
     id: new FormControl(''),
-    sku: new FormControl('', Validators.required),
-    product: new FormControl('', Validators.required),
-    stock: new FormControl(null),
-    cost: new FormControl(null, Validators.required),
-    price: new FormControl(null, Validators.required),
+    sku: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    product: new FormControl('', [
+      Validators.required,
+      Validators.pattern('@'),
+    ]),
+    stock: new FormControl(null, Validators.min(0)),
+    cost: new FormControl(null, [Validators.required, Validators.min(0)]),
+    price: new FormControl(null, [Validators.required, Validators.min(0)]),
   });
 
   saveProduct(): void {
