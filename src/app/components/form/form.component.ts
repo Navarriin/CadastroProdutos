@@ -12,7 +12,6 @@ import {
   FormControl,
 } from '@angular/forms';
 // Meus imports(API, TableComponent e interface)
-import { ProductsApiService } from '../../services/products-api.service';
 import { TableComponent } from '../table/table.component';
 import { Products } from '../../interface/Products.interface';
 

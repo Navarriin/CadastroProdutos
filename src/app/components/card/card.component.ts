@@ -6,7 +6,6 @@ import { FormComponent } from '../form/form.component';
 // Angular Material components
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { Products } from '../../interface/Products.interface';
 
 @Component({
   selector: 'app-card',

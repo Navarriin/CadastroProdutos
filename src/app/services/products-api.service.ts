@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Products } from '../interface/Products.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsApiService {
-  readonly url: string = 'http://localhost:3000/Products';
+  readonly url: string = 'http://localhost:8080/products';
   constructor(private http: HttpClient) {}
 
   get(): Observable<Products[]> {
