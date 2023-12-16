@@ -10,7 +10,7 @@ export class ProductsApiService {
   readonly url: string = 'http://localhost:8080/products';
   constructor(private http: HttpClient) {}
 
-  get(): Observable<Products[]> {
+  getAll(): Observable<Products[]> {
     return this.http.get<Products[]>(this.url);
   }
 

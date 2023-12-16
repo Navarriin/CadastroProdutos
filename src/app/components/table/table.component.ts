@@ -59,11 +59,7 @@ export class TableComponent {
   }
 
   getProducts(): void {
-    this.productsApi.get().subscribe((data) => (this.data = data));
-  }
-
-  postProduct(body: Products): void {
-    this.productsApi.post(body).subscribe(() => this.getProducts());
+    this.productsApi.getAll().subscribe((data) => (this.data = data));
   }
 
   putProduct(body: Products): void {
