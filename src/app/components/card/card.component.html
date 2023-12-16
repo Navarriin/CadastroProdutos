@@ -4,12 +4,9 @@
     <mat-card>
       <mat-card-header>
         <div class="title d-flex col-11 m-auto justify-content-between mt-3">
-          <mat-card-title>Cadastro de produtos</mat-card-title>
+          <mat-card-title>Listagem de produtos</mat-card-title>
           <div class="d-flex gap-2">
-            <button *ngIf="!search" mat-raised-button color="primary">Pesquisar</button>
-            <button (click)="toggleSearch()" mat-raised-button color="primary">
-              {{!search ? 'Incluir' : 'Voltar'}}
-            </button>
+            <button mat-raised-button color="primary" routerLink="/register"> Incluir </button>
           </div>
         </div>
       </mat-card-header>

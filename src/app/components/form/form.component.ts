@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 // Angular materials
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +15,7 @@ import {
 // Meus imports(API, TableComponent e interface)
 import { TableComponent } from '../table/table.component';
 import { Products } from '../../interface/Products.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -24,6 +26,8 @@ import { Products } from '../../interface/Products.interface';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    RouterLink,
+    MatCardModule,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',

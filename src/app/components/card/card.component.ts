@@ -6,6 +6,7 @@ import { FormComponent } from '../form/form.component';
 // Angular Material components
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     TableComponent,
     FormComponent,
+    RouterLink,
   ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
