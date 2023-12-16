@@ -33,7 +33,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './form.component.scss',
 })
 export class FormComponent extends TableComponent {
-  @Output() toggle: EventEmitter<void> = new EventEmitter();
   isLinear: boolean = false;
 
   formGroup: FormGroup = new FormGroup({
@@ -50,7 +49,6 @@ export class FormComponent extends TableComponent {
       let products = this.formGroup.value as Products;
 
       this.postProduct(products);
-      this.toggle.emit();
     } else {
       this.formGroup.markAllAsTouched();
       this.formGroup.updateValueAndValidity();

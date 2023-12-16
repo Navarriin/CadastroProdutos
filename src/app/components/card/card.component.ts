@@ -6,6 +6,7 @@ import { FormComponent } from '../form/form.component';
 // Angular Material components
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+// Modulo para rotear
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -22,10 +23,4 @@ import { RouterLink } from '@angular/router';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent extends FormComponent {
-  search: boolean = false;
-
-  toggleSearch(): void {
-    this.search = !this.search;
-  }
-}
+export class CardComponent {}
