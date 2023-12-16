@@ -2,9 +2,10 @@
   <div class="row mt-4 mb-4">
     <div class="col-12">
       <div class="d-flex justify-content-between me-5 pe-2 mt-2">
-        <mat-card-title>Cadastro de produto</mat-card-title>
+        <mat-card-title class="ms-5">Cadastro de produto</mat-card-title>
         <button mat-raised-button type=" button" color="primary" routerLink="/">Voltar</button>
       </div>
+      <hr class="col-11 mt-3 m-auto" />
       <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
         <mat-step [stepControl]="formGroup">
           <form [formGroup]="formGroup">
