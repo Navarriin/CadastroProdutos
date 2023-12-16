@@ -67,8 +67,13 @@ export class TableComponent {
   }
 
   putProduct(body: Products): void {
-    this.productsApi.update(body).subscribe(() => this.getProducts());
-    this.show = false;
+    if (this.formGroupUpdate.valid) {
+      this.productsApi.update(body).subscribe(() => this.getProducts());
+      this.show = false;
+    } else {
+      this.formGroupUpdate.markAllAsTouched();
+      this.formGroupUpdate.updateValueAndValidity();
+    }
   }
 
   deleteProduct(id: string): void {
