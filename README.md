@@ -2,6 +2,7 @@
 ![Static Badge](https://img.shields.io/badge/TypeScript-blue)
 ![Static Badge](https://img.shields.io/badge/Angular-blue)
 
+![Captura de tela 2024-01-06 143701](https://github.com/Navarriin/CadastroProdutos/assets/139160874/73010ecf-086a-4eca-862a-d183cd4c3b8e)
 
 
 ## :smile: Descrição
